@@ -42,3 +42,26 @@ body {
     object-fit: cover;
     object-position: 50% 50%;
 }
+
+#no, #moreinfo, #yes {
+    font-size: 16vh;
+    border-radius: 50%;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#no {
+    color: #ff0000;
+    background-color: none;
+}
+
+#moreinfo {
+    color: black;
+    background-color: none;
+}
+
+#yes {
+    color: aquamarine;
+    background-color: none;
+}

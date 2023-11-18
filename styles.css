@@ -16,10 +16,9 @@ body {
 
 .side {
   min-width: 320px;
-  height: 200px;
-  background-color: #fff;
   height: 100%;
   min-height: 100vh;
+  background-color: #fff;
   border-right: 1px solid #e1e1e1;
 }
 
@@ -42,9 +41,29 @@ body {
 }
 
 .side .header .title{
-  padding: 0 10px;
+  padding: 0 0px;
   color: #fff;
   font-size: 23px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  background-color: hsl(0, 0%, 100%);
+  padding: 0;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: left;
+}
+
+.navbar a:hover {
+  background-color: hsl(0, 2%, 74%);
 }
 
 .container .card {
@@ -74,28 +93,28 @@ body {
   text-shadow: 1px 1px 5px #444;
 }
 
-.content .buttons {
+.content .cardbuttons {
   margin-top: 10px;
   display: flex;
   align-items: center;
 }
 
-.content .buttons .no i{
+.content .cardbuttons .no i{
   color: #fd2e79;
   font-size: 26px;
 }
 
-.content .buttons .info i{
+.content .cardbuttons .info i{
   color: #7EC8E3;
   font-size: 33px;
 }
 
-.content .buttons .yes i{
+.content .cardbuttons .yes i{
   color: #11e298;
   font-size: 26px;
 }
 
-.content .buttons .no, .content .buttons .yes {
+.content .cardbuttons .no, .content .cardbuttons .yes {
   background-color: #fff;
   width: 50px;
   height: 50px;
@@ -108,7 +127,7 @@ body {
   transition: 0.2 transform;
 }
 
-.content .buttons .info{
+.content .cardbuttons .info{
   background-color: #fff;
   width: 70px;
   height: 70px;
@@ -121,6 +140,6 @@ body {
   transition: 0.2 transform;
 }
 
-.content .buttons .no:hover, .content .buttons .info:hover, .content .buttons .yes:hover {
+.content .cardbuttons .no:hover, .content .cardbuttons .info:hover, .content .cardbuttons .yes:hover {
   transform: scale(1.1);
 }

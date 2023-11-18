@@ -26,3 +26,4 @@ function displayNextQuestion() {
     document.getElementById('question-container').innerHTML = '<p>Thank you for answering all the questions!</p>';
   }
 }
+

@@ -1,4 +1,6 @@
-        const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
+import config from './config';
+
+const apiKey = config.apiKey;
 
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 

@@ -40,7 +40,8 @@ class Card{
         //prevent drag
         this.element.addEventListener('dragstart', e => {
             e.preventDefault();
-        })
+        });
+
     }
 
     #handleMouseMove = (e) => {

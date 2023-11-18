@@ -82,18 +82,23 @@ body {
 
 .content .buttons .no i{
   color: #fd2e79;
+  font-size: 26px;
+}
+
+.content .buttons .info i{
+  color: #7EC8E3;
   font-size: 33px;
 }
 
 .content .buttons .yes i{
   color: #11e298;
-  font-size: 33px;
+  font-size: 26px;
 }
 
 .content .buttons .no, .content .buttons .yes {
   background-color: #fff;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
   display: flex;
   justify-content: center;
@@ -103,6 +108,19 @@ body {
   transition: 0.2 transform;
 }
 
-.content .buttons .no:hover, .content .buttons .yes:hover {
+.content .buttons .info{
+  background-color: #fff;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  margin: 15px;
+  transition: 0.2 transform;
+}
+
+.content .buttons .no:hover, .content .buttons .info:hover, .content .buttons .yes:hover {
   transform: scale(1.1);
 }

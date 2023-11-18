@@ -1,7 +1,7 @@
 class Card{
     constructor({
         imageUrl,
-        onDismiss
+        onDismiss,
     }) {
         this.imageUrl = imageUrl;
         this.onDismiss = onDismiss;
@@ -40,7 +40,8 @@ class Card{
         //prevent drag
         this.element.addEventListener('dragstart', e => {
             e.preventDefault();
-        })
+        });
+
     }
 
     #handleMouseMove = (e) => {
@@ -54,7 +55,7 @@ class Card{
         this.element.style.transform = `translate(${this.#offsetX}px, ${this.#offsetY}px) rotate(${rotate}deg)`;
 
         // dismiss card when moving far away
-        if (Math.abs(this.#offsetX) > this.element.clientWidth * 0.7) {
+        if (Math.abs(this.#offsetX) > this.element.clientWidth * 0.9) {
             const direction = this.#offsetX > 0 ? 1: -1;
             this.#dismiss(direction);
         }
@@ -73,16 +74,13 @@ class Card{
         document.removeEventListener('mouseup', this.#handleMouseUp);
         document.removeEventListener('mousemove', this.#handleMouseMove);
 
-        this.element.style.transition = 'transform 1s';
+        this.element.style.transition = 'transform 0.5s';
         this.element.style.transform = `translate(${direction * window.innerWidth}px, ${this.#offsetY}px rotate(${90 * direction}deg)`;
         this.element.classList.add('dismissing');
 
         setTimeout(() => {
             this.element.remove();
-        }, 1000);
+        }, 20); 
 
-        if (typeof this.onDismiss === 'function') {
-            this.onDismiss();
-        }
     }
 }

@@ -46,3 +46,30 @@ body {
   color: #fff;
   font-size: 23px;
 }
+
+.container .card {
+  position: relative;
+  height: 600px;
+}
+
+.content .card .destination {
+  width: 380px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.5);
+}
+
+.content .card .destination .profile{
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.content .card .destination .name{
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 5px #444;
+}

@@ -16,11 +16,17 @@ let cardCount = 0;
 // functions
 function appendNewCard() {
     const card = new Card({
-        imageUrl: urls[cardCount % urls.length]
+        imageUrl: urls[cardCount % urls.length],
+        onDismiss: appendNewCard
     });
-    card.element.style.setProperty('--i', cardCount % urls.length);
+    //card.element.style.setProperty('--i', cardCount % urls.length);
     swiper.append(card.element);
     cardCount++;
+
+    const cards = swiper.querySelectorAll('.card:not(.dismissing');
+    cards.forEach((card, index)=>{
+        card.style.setProperty('--i', index);
+    });
 }
 
 // first 5 cards

@@ -7,43 +7,10 @@
 </head>
 <body>
     <h1>Google Maps API Example</h1>
-    <div id="results"></div>
+    <div id="resultsDiv"></div>
 
-    <script>
-        // Replace 'YOUR_API_KEY' with your actual Google API key
-        const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
-
-        // Function to make a request to the Google Places API
-        function getPlaces(type, location) {
-            const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=5000&type=${type}&key=${apiKey}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    displayResults(data.results, type);
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
-
-        // Function to display results on the webpage
-        function displayResults(results, type) {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
-
-            results.forEach(place => {
-                resultsDiv.innerHTML += `<li>${place.name}</li>`;
-            });
-
-            resultsDiv.innerHTML += `</ul>`;
-        }
-
-        // Example: Get transportation map, hotels, attractions, and food around a specific location
-        const location = { lat: 41.8781, lng: -87.6298 }; // Chicago coordinates
-
-        getPlaces('transit_station', location);
-        getPlaces('lodging', location); // Hotels
-        getPlaces('tourist_attraction', location); // Attractions
-        getPlaces('restaurant', location); // Food
+    <script src="./gmaps_api.js">
+    
     </script>
 </body>
 </html>

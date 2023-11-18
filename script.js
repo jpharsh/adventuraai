@@ -5,6 +5,7 @@ const questions = [
     "Do you enjoy trying new foods?",
     "Is coding fun for you?",
     "Have you ever climbed a mountain?",
+    "Do you want to experience different foods?"
   ];
   
   let currentQuestionIndex = 0;

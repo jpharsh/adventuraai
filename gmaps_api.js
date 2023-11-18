@@ -1,6 +1,5 @@
-        
-        import config from './config'
-        const apiKey = config.Google_API_KEY;
+
+        const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
 
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 

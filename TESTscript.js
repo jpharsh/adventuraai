@@ -84,17 +84,6 @@ function appendNewCard() {
         card.style.setProperty('--i', index);
     });
 }
-function getCurrentCity() {
-    const displayedCard = swiper.querySelector('.card:not(.dismissing)');
-    if (displayedCard) {
-        const cardInstance = displayedCard.cardInstance; // Assuming you store the card instance on the card element
-        if (cardInstance instanceof Card) {
-            return cardInstance.getCurrentCity();
-        }
-    }
-    return null;
-}
-
 
 // first 5 cards
 for(let i = 0; i < 5; i++) {

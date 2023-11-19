@@ -19,19 +19,21 @@ def receive_data():
     print("Received data:", data)
     received_data = data.get('key', '')
 
-    completion = anthropic.completions.create(
-        model="claude-2",
-        prompt=f"{HUMAN_PROMPT} {received_data} Create a 1 day trip itinerary out of the data given. Format as a schedule and give as a plain text {AI_PROMPT}",
-        max_tokens_to_sample=300,
-        stream=True
-    )
+    output_file_path = "output.txt"  # Choose your desired file path
+    with open(output_file_path, "w") as output_file:
+        completion = anthropic.completions.create(
+            model="claude-2",
+            prompt=f"{HUMAN_PROMPT} {received_data} Create a 1 day trip itinerary out of the data given. Format as a schedule and give as a plain text {AI_PROMPT}",
+            max_tokens_to_sample=300,
+            stream=True
+        )
 
-    for chunk in completion:
-        print(chunk.completion, end="")
-        if chunk.completion.endswith("..."):
-            break
-        if chunk.completion == "I'm sorry, I don't understand.":
-            break
+        for chunk in completion:
+            print(chunk.completion, end="")
+            if chunk.completion.endswith("..."):
+                break
+            if chunk.completion == "I'm sorry, I don't understand.":
+                break
 
     return jsonify({'message': 'Data received successfully'})
 

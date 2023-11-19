@@ -10,7 +10,7 @@ anthropic = Anthropic(api_key=api_key)
 
 completion = anthropic.completions.create(
     model="claude-2",
-    prompt=f"{HUMAN_PROMPT} Generate a 200 word travel itinerary that has someone visit Atlanta. They will visit 3 famous landmarks at 3 different times of day.  Also have meals at restaurants before visiting each landmark {AI_PROMPT}",
+    prompt=f"{HUMAN_PROMPT} create a 1 day trip itinerary out of the data given. Format as a schedule and give as a plain text {AI_PROMPT}",
     max_tokens_to_sample=300,
     stream=True
 )

@@ -17,10 +17,11 @@ anthropic = Anthropic(api_key=api_key)
 def receive_data():
     data = request.json  # Assuming the request contains JSON data
     print("Received data:", data)
+    received_data = data.get('key', '')
 
     completion = anthropic.completions.create(
         model="claude-2",
-        prompt=f"{HUMAN_PROMPT} Make a story out of {AI_PROMPT}",
+        prompt=f"{HUMAN_PROMPT} {received_data} Create a 1 day trip itinerary out of the data given. Format as a schedule and give as a plain text {AI_PROMPT}",
         max_tokens_to_sample=300,
         stream=True
     )

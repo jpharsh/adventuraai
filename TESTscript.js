@@ -12,7 +12,7 @@ const urls = [
     'https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg',
     'https://media.cntraveler.com/photos/607e2bd6469bfa79798ab7ed/16:9/w_2560%2Cc_limit/951973848',
     'https://bdc2020.o0bc.com/wp-content/uploads/2022/03/Boston-Harbor-scaled-1-6307fa615b6ba.jpg',
-    'https://www.travelandleisure.com/thmb/G_kw973Jia4EWv-baF0YPLMjK-E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/portland-maine-PORTLANDME0815-2000-b8031817d6f24a7bb2f953059e9eaa02.jpg',
+    'https://traveler.marriott.com/wp-content/uploads/2022/02/broadway-bridge-skyline-portland-oregon.jpg',
     'https://resortsac.com/wp-content/uploads/2019/07/resorts-north-beach-atlantic-city-casino-900x357.jpg',
 
     'https://www.travelandleisure.com/thmb/DCQ5PIzBVcgmRVxG-i3psgmWiWE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-nashville-NASHVILLETMOG0723-2b95531d62b24c3fa0d4de045f35a247.jpg',

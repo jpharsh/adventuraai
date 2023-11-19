@@ -18,19 +18,21 @@ def receive_data():
     data = request.json  # Assuming the request contains JSON data
     print("Received data:", data)
 
-    completion = anthropic.completions.create(
-        model="claude-2",
-        prompt=f"{HUMAN_PROMPT} Make a story out of {AI_PROMPT}",
-        max_tokens_to_sample=300,
-        stream=True
-    )
+    output_file_path = "output.txt"  # Choose your desired file path
+    with open(output_file_path, "w") as output_file:
+        completion = anthropic.completions.create(
+            model="claude-2",
+            prompt=f"{HUMAN_PROMPT} Make a story out of {AI_PROMPT}",
+            max_tokens_to_sample=300,
+            stream=True
+        )
 
-    for chunk in completion:
-        print(chunk.completion, end="")
-        if chunk.completion.endswith("..."):
-            break
-        if chunk.completion == "I'm sorry, I don't understand.":
-            break
+        for chunk in completion:
+            print(chunk.completion, end="")
+            if chunk.completion.endswith("..."):
+                break
+            if chunk.completion == "I'm sorry, I don't understand.":
+                break
 
     return jsonify({'message': 'Data received successfully'})
 

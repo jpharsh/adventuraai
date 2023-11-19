@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS from flask_cors
-import claude_ai
+#import claude_ai
 
 
 app = Flask(__name__)

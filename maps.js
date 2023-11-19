@@ -48,26 +48,6 @@ function displayResults(results, type) {
     resultsDiv.innerHTML += `</ul>`;
 }
 
-function sendDataToFlask() {
-
-    const dataToSend = {key: 'data' };  // Replace with your actual data
-
-    fetch('http://localhost:5000/receive_data', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataToSend)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Server response:', data);
-    })
-    .catch(error => {
-        console.error('Error sending data to server:', error);
-    });
-}
-
 function initMap() {
     const urlParams = new URLSearchParams(window.location.search);
     const city = urlParams.get('city');
@@ -113,5 +93,4 @@ function initMap() {
                     });
             }
         });
-        sendDataToFlask();
 }

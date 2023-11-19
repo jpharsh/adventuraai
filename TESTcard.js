@@ -2,9 +2,11 @@ class Card{
     constructor({
         imageUrl,
         onDismiss,
+        text
     }) {
         this.imageUrl = imageUrl;
         this.onDismiss = onDismiss;
+        this.text = text;
         this.#init();
     }
 
@@ -17,9 +19,22 @@ class Card{
     #init = () => {
         const card = document.createElement('div');
         card.classList.add('card');
+
         const img = document.createElement('img');
         img.src= this.imageUrl;
         card.append(img);
+
+        // Create a div for the text
+        const textContainer = document.createElement('div');
+        textContainer.textContent = this.text; // Set the text content
+        textContainer.style.position = 'absolute'; // Position the text container
+        textContainer.style.bottom = '10px'; // Adjust the vertical position as needed
+        textContainer.style.left = '0'; // Center the text horizontally
+        textContainer.style.right = '0'; // Center the text horizontally
+        textContainer.style.color = 'white'; // Set text color
+        textContainer.style.textAlign = 'center'; // Center the text
+        card.append(textContainer);
+
         this.element = card;
         this.#listenToMouseEvents();
     }

@@ -10,6 +10,14 @@ const urls = [
     'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/2d/06/5e.jpg'
 ];
 
+const cities = [
+    'Moscow',
+    'London',
+    'Amsterdam',
+    'Skyline',
+    'Actual Skyline'
+];
+
 // variables
 let cardCount = 0;
 
@@ -17,6 +25,7 @@ let cardCount = 0;
 function appendNewCard() {
     const card = new Card({
         imageUrl: urls[cardCount % urls.length],
+        text: cities[cardCount % cities.length],
         onDismiss: appendNewCard
     });
     //card.element.style.setProperty('--i', cardCount % urls.length);

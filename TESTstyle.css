@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -12,6 +13,43 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background: linear-gradient(0deg, #ff0000, rgb(160, 70, 70)747);
+}
+
+#sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+#sidebar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#toggle-btn-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#toggle-btn {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    color: white;
+    background-color: #333;
+    border: none;
 }
 
 .container {
@@ -24,7 +62,7 @@ body {
 }
 
 #swiper {
-    height: 60vh;
+    height: 50vh;
     aspect-ratio: 3 / 2;
     perspective: 1000px;
     perspective-origin: center 50%;
@@ -43,6 +81,7 @@ body {
     filter: drop-shadow(2px 2px 20px rgba(0, 0, 0, 0.5));
     cursor: pointer;
     user-select: none;
+    flex-direction: column;
 }
 
 .card img{
@@ -50,6 +89,26 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: 50% 50%;
+}
+
+.card-text {
+    /* Add styles for the text container */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card div {
+    /* Add styles for the text container */
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    font-size: 18px;
 }
 
 .button-container {

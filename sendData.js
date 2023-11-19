@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <button id="sendDataBtn">Start</button>
-    <script>
-        document.getElementById('sendDataBtn').addEventListener('click', sendDataToFlask);
+document.getElementById('sendDataBtn').addEventListener('click', sendDataToFlask);
 
 function sendDataToFlask() {
-    const dataToSend = { key: 'value' };  // Replace with your actual data
+    const resultsDiv = document.getElementById('trial');
+    const dataToSend = {key: resultsDiv.innerHTML };  // Replace with your actual data
 
     fetch('http://localhost:5000/receive_data', {
         method: 'POST',
@@ -29,6 +19,3 @@ function sendDataToFlask() {
         console.error('Error sending data to server:', error);
     });
 }
-    </script>
-</body>
-</html>

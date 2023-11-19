@@ -1,13 +1,15 @@
- Here is a sample 1 day trip itinerary for Kansas City using the provided data:
+ Here is a 1 day Kansas City trip itinerary based on the provided data:
 
-9:00am - Breakfast at Arthur Bryant's Barbeque - Known for their slow-smoked barbecue, Arthur Bryant's is a Kansas City institution. Try their signature ribs and burnt ends. 
+9:00am - Breakfast at Arthur Bryant's Barbeque - Famous KC BBQ joint known for their slow smoked meats and sauce. 
 
-11:00am - Union Station Kansas City - Explore this beautifully restored historical train station, which now houses a science museum, theaters, shops and restaurants. 
+11:00am - Tour Union Station Kansas City - Beautifully restored train station now home to museums, shops, and restaurants.
 
-1:00pm - National WWI Museum and Memorial - This moving museum chronicles America's involvement in WWI through interactive exhibits and artifacts. Spend a couple hours taking in the history.
+12:30pm - Lunch at Pierpont's at Union Station - Upscale restaurant inside Union Station featuring contemporary American cuisine. 
 
-4:00pm - Pierpont's at Union Station - Stop at this upscale restaurant back at Union Station for a pre-dinner cocktail and appetizer. They're known for superb contemporary American cuisine.
+2:00pm - Visit National WWI Museum and Memorial - America's leading institution dedicated to remembering, interpreting and understanding the Great War and its enduring impact.
 
-6:00pm - Jack Stack Barbecue - Freight House - End the night with barbecue and jazz at Jack Stack's Freight House location. They dish up specialty meats alongside live jazz performances.
+4:30pm - Check into Hilton President Kansas City - Historic downtown luxury hotel near attractions.
 
-9:00pm - Check into Hilton President Kansas City - Wrap up the busy day by checking into this conveniently located downtown hotel.
+6:30pm - Dinner at Jack Stack Barbecue - Freight House - Regional BBQ chain known for wood-fire grilled meats, side dishes and desserts. Enjoy the lively Freighthouse district location.
+
+9:00pm - Return to hotel for evening.

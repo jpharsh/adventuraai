@@ -68,6 +68,7 @@ const cities = [
 
 // variables
 let cardCount = 0;
+let cityIndex = -5;
 
 // functions
 function appendNewCard() {
@@ -78,6 +79,7 @@ function appendNewCard() {
     });
     swiper.append(card.element);
     cardCount++;
+    cityIndex++;
 
     const cards = swiper.querySelectorAll('.card:not(.dismissing');
     cards.forEach((card, index)=>{

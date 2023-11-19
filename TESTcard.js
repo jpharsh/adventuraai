@@ -37,13 +37,13 @@ class Card{
         this.element = card;
         this.#listenToMouseEvents();
         this.#listenToPopup();
-
     }
     
     #listenToPopup = () => {
         document.getElementById("moreinfo").addEventListener("click", () => {
-            window.open(`moreinfopop.html?city=${encodeURIComponent(this.text)}`, "popup", "width=400,height=400");
+            window.open(`moreinfopop.html?city=${encodeURIComponent(cities[cityIndex])}`, "popup", "width=400,height=400");
         });
+        
     }
 
     #listenToMouseEvents = () => {

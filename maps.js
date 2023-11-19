@@ -38,14 +38,14 @@ function getCoordinatesForCity(cityName) {
 }
 
 function displayResults(results, type) {
-    const resultsDiv = document.getElementById('trial');
+    const resultsDiv = document.getElementById('output');
     resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
 
     results.forEach(place => {
         resultsDiv.innerHTML += `<li>${place.name}</li>`;
     });
 
-    resultsDiv.innerHTML += `</ul>`;
+    resultsDiv.innerHTML += `</ol>`;
 }
 
 function initMap() {

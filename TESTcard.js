@@ -41,7 +41,7 @@ class Card{
     
     #listenToPopup = () => {
         document.getElementById("moreinfo").addEventListener("click", () => {
-            window.open(`moreinfopop.html?city=${encodeURIComponent(cities[cityIndex])}`, "popup", "width=1200,height=600");
+            window.open(`moreinfopop.html?city=${encodeURIComponent(cities[cityIndex])}`, "popup", "width=700,height=800");
         });
         
     }

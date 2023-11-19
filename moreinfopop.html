@@ -17,14 +17,12 @@
 <body>
     <h1>City Explorer</h1>
     <div class="container">
-        <div id="map"></div>
-
-        <script src="maps.js"></script>
-
-        <!-- Add your Google Maps API key here -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY&callback=initMap" async defer></script>
-
-        <div id="trial"></div>
+        <div id="map">
+            <script src="maps.js"></script>
+            <!-- Add your Google Maps API key here -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY&callback=initMap" async defer></script>
+        </div>
+        <div id="output"></div>
         <button id="sendDataBtn">SendData</button>
     </div>
 

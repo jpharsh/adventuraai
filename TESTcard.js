@@ -36,8 +36,16 @@ class Card{
 
         this.element = card;
         this.#listenToMouseEvents();
+        this.#listenToPopup();
+
     }
     
+    #listenToPopup = () => {
+        document.getElementById("moreinfo").addEventListener("click", function() {
+            window.open("moreinfopop.html", "popup", "width=400,height=400");
+        });
+    }
+
     #listenToMouseEvents = () => {
         //mousedown
         this.element.addEventListener('mousedown', e => {

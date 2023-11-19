@@ -1,14 +1,20 @@
 const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
-function getPlaces(type, locationData) {
+function getPlaces(type, locationData, num) {
     const url = `${proxyUrl}https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${locationData.lat},${locationData.lng}&radius=5000&type=${type}&key=${apiKey}`;
 
     return fetch(url)
         .then(response => response.json())
         .then(data => {
-            displayResults(data.results.slice(0, 1), type)
-            return data.results.slice(0, 1); // Take only the first result for simplicity
+            const resultAtIndex = data.results[num - 1]; // Adjust index since num is 1-based
+            if (resultAtIndex) {
+                displayResults([resultAtIndex], type);
+                return [resultAtIndex];
+            } else {
+                console.error(`Result at index ${num} not found.`);
+                return [];
+            }
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -22,8 +28,8 @@ function getCoordinatesForCity(cityName) {
     return fetch(geocodingUrl)
         .then(response => response.json())
         .then(data => {
-            const location = data.results[0].geometry.location;
-            return { lat: location.lat, lng: location.lng };
+            const location = data.results[0]?.geometry?.location;
+            return location ? { lat: location.lat, lng: location.lng } : null;
         })
         .catch(error => {
             console.error('Error fetching coordinates:', error);
@@ -32,14 +38,14 @@ function getCoordinatesForCity(cityName) {
 }
 
 function displayResults(results, type) {
-const resultsDiv = document.getElementById('trial');
-resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
+    const resultsDiv = document.getElementById('trial');
+    resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
 
-results.forEach(place => {
-resultsDiv.innerHTML += `<li>${place.name}</li>`;
-});
+    results.forEach(place => {
+        resultsDiv.innerHTML += `<li>${place.name}</li>`;
+    });
 
-resultsDiv.innerHTML += `</ul>`;
+    resultsDiv.innerHTML += `</ul>`;
 }
 
 function initMap() {
@@ -57,12 +63,12 @@ function initMap() {
 
                 // Get places for food, lodging, and tourist attraction
                 const promises = [
-                    getPlaces('restaurant', coordinates),
-                    getPlaces('restaurant', coordinates),
-                    getPlaces('restaurant', coordinates),
-                    getPlaces('lodging', coordinates),
-                    getPlaces('tourist_attraction', coordinates),
-                    getPlaces('tourist_attraction', coordinates)
+                    getPlaces('restaurant', coordinates, 1),
+                    getPlaces('restaurant', coordinates, 2),
+                    getPlaces('restaurant', coordinates, 3),
+                    getPlaces('lodging', coordinates, 1),
+                    getPlaces('tourist_attraction', coordinates, 1),
+                    getPlaces('tourist_attraction', coordinates, 2)
                 ];
 
                 Promise.all(promises)

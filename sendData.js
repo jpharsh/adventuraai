@@ -1,7 +1,7 @@
 document.getElementById('sendDataBtn').addEventListener('click', sendDataToFlask);
 
 function sendDataToFlask() {
-    const resultsDiv = document.getElementById('trial');
+    const resultsDiv = document.getElementById('output');
     const dataToSend = {key: resultsDiv.innerHTML };  // Replace with your actual data
 
     fetch('http://localhost:5000/receive_data', {

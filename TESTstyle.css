@@ -14,9 +14,18 @@ body {
     background: linear-gradient(0deg, #ff0000, rgb(160, 70, 70)747);
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-top: 20px;
+}
+
 #swiper {
-    height: 70vh;
-    aspect-ratio: 2 / 3;
+    height: 60vh;
+    aspect-ratio: 3 / 2;
     perspective: 1000px;
     perspective-origin: center 50%;
     transform-style: preserve-3d;
@@ -43,12 +52,26 @@ body {
     object-position: 50% 50%;
 }
 
+.button-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
 #no, #moreinfo, #yes {
-    font-size: 16vh;
+    font-size: 8vh;
     border-radius: 50%;
     padding: 20px;
+    background: none;
     position: relative;
     z-index: 1;
+}
+
+#no:hover, #moreinfo:hover, #yes:hover {
+    border-radius: inherit;
+    background: #787878;
+    opacity: 0.7; 
 }
 
 #no {

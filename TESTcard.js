@@ -55,7 +55,7 @@ class Card{
         this.element.style.transform = `translate(${this.#offsetX}px, ${this.#offsetY}px) rotate(${rotate}deg)`;
 
         // dismiss card when moving far away
-        if (Math.abs(this.#offsetX) > this.element.clientWidth * 0.9) {
+        if (Math.abs(this.#offsetX) > this.element.clientWidth * 0.7) {
             const direction = this.#offsetX > 0 ? 1: -1;
             this.#dismiss(direction);
         }
@@ -81,6 +81,10 @@ class Card{
         setTimeout(() => {
             this.element.remove();
         }, 20); 
+
+        if(typeof this.onDismiss === 'function'){
+            this.onDismiss();
+        }
 
     }
 }

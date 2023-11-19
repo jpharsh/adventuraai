@@ -1,7 +1,5 @@
 // DOM
 const swiper = document.querySelector('#swiper');
-const yes = document.querySelector('#yes');
-const no = document.querySelector('#no');
 
 // constants
 const urls = [

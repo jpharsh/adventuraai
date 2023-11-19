@@ -42,7 +42,7 @@ class Card{
     
     #listenToPopup = () => {
         document.getElementById("moreinfo").addEventListener("click", function() {
-            window.open("moreinfopop.html", "popup", "width=400,height=400");
+            window.open(`moreinfopop.html?city=${encodeURIComponent('Atlanta')}`, "popup", "width=400,height=400");
         });
     }
 

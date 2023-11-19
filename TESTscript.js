@@ -11,11 +11,35 @@ const urls = [
 ];
 
 const cities = [
-    'Moscow',
-    'London',
-    'Amsterdam',
-    'Skyline',
-    'Actual Skyline'
+    'Indianapolis',
+    'Detroit',
+    'Chicago',
+    'Kansas City',
+    'Minneapolis',
+
+    'New York City',
+    'Pittsburgh',
+    'Boston',
+    'Portland',
+    'Atlantic City',
+
+    'Nashville',
+    'Miami',
+    'Savannah',
+    'New Orleans',
+    'Gatlinburg',
+
+    'Austin',
+    'Las Vegas',
+    'Salt Lake City',
+    'San Antonio',
+    'Albuquerque',
+
+    'Seattle',
+    'Los Angeles',
+    'Death Valley',
+    'San Francisco',
+    'San Diego'
 ];
 
 // variables
@@ -28,7 +52,6 @@ function appendNewCard() {
         text: cities[cardCount % cities.length],
         onDismiss: appendNewCard
     });
-    //card.element.style.setProperty('--i', cardCount % urls.length);
     swiper.append(card.element);
     cardCount++;
 

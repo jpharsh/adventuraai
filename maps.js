@@ -66,7 +66,8 @@ const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
 
 
 
-function initMap(city) {
+function initMap() {
+    const city = urlParams.get('city');
     const mapElement = document.getElementById('map');
 
 

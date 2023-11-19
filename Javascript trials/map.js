@@ -43,7 +43,7 @@ const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
 }
 
         function initMap() {
-            const city = getCurrentCity();
+            const city = 'San Francisco'; //Replace with selected city
             const mapElement = document.getElementById('map');
 
             getCoordinatesForCity(city)

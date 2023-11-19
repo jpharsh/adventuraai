@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map with Public Transit Directions</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="../map.js">
+  
+</script>
+
+<!-- Add your Google Maps API key here -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY&callback=initMap" async defer></script>
+
+<button onclick="openGoogleMapsDirections()">Show Public Transit Directions</button>
+
+</body>
+</html>

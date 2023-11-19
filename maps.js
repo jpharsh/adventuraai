@@ -48,6 +48,8 @@ function displayResults(results, type) {
     resultsDiv.innerHTML += `</ul>`;
 }
 
+
+
 function initMap() {
     const urlParams = new URLSearchParams(window.location.search);
     const city = urlParams.get('city');

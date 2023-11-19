@@ -1,75 +1,51 @@
 const apiKey = 'AIzaSyA2mvBYUCSwer6A31nvCq54EmbCP_kscbY';
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
+function getPlaces(type, locationData) {
+    const url = `${proxyUrl}https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${locationData.lat},${locationData.lng}&radius=5000&type=${type}&key=${apiKey}`;
 
-
-
-        function getPlaces(type, locationData) {
-            const url = `${proxyUrl}https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${locationData.lat},${locationData.lng}&radius=5000&type=${type}&key=${apiKey}`;
-
-
-
-
-            return fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    displayResults(data.results.slice(0, 1), type)
-                    return data.results.slice(0, 1); // Take only the first result for simplicity
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    return [];
-                });
-        }
-
-
-
-
-        function getCoordinatesForCity(cityName) {
-            const geocodingUrl = `${proxyUrl}https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(cityName)}&key=${apiKey}`;
-
-
-
-
-            return fetch(geocodingUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const location = data.results[0].geometry.location;
-                    return { lat: location.lat, lng: location.lng };
-                })
-                .catch(error => {
-                    console.error('Error fetching coordinates:', error);
-                    return null;
-                });
-        }
-
-
-
-
-        function displayResults(results, type) {
-    const resultsDiv = document.getElementById('trial');
-    resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
-
-
-
-
-    results.forEach(place => {
-        resultsDiv.innerHTML += `<li>${place.name}</li>`;
-    });
-
-
-
-
-    resultsDiv.innerHTML += `</ul>`;
+    return fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            displayResults(data.results.slice(0, 1), type)
+            return data.results.slice(0, 1); // Take only the first result for simplicity
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            return [];
+        });
 }
 
+function getCoordinatesForCity(cityName) {
+    const geocodingUrl = `${proxyUrl}https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(cityName)}&key=${apiKey}`;
 
+    return fetch(geocodingUrl)
+        .then(response => response.json())
+        .then(data => {
+            const location = data.results[0].geometry.location;
+            return { lat: location.lat, lng: location.lng };
+        })
+        .catch(error => {
+            console.error('Error fetching coordinates:', error);
+            return null;
+        });
+}
 
+function displayResults(results, type) {
+const resultsDiv = document.getElementById('trial');
+resultsDiv.innerHTML += `<h2>${type}</h2><ul>`;
+
+results.forEach(place => {
+resultsDiv.innerHTML += `<li>${place.name}</li>`;
+});
+
+resultsDiv.innerHTML += `</ul>`;
+}
 
 function initMap() {
+    const urlParams = new URLSearchParams(window.location.search);
     const city = urlParams.get('city');
     const mapElement = document.getElementById('map');
-
 
     getCoordinatesForCity(city)
         .then(coordinates => {
@@ -78,7 +54,6 @@ function initMap() {
                     center: coordinates,
                     zoom: 12
                 });
-
 
                 // Get places for food, lodging, and tourist attraction
                 const promises = [
@@ -89,7 +64,6 @@ function initMap() {
                     getPlaces('tourist_attraction', coordinates),
                     getPlaces('tourist_attraction', coordinates)
                 ];
-
 
                 Promise.all(promises)
                     .then(results => {
@@ -102,11 +76,9 @@ function initMap() {
                                     title: place.name
                                 });
 
-
                                 const infoWindow = new google.maps.InfoWindow({
                                     content: `<h3>${place.name}</h3><p>${place.vicinity}</p>`
                                 });
-
 
                                 marker.addListener('click', () => {
                                     infoWindow.open(map, marker);

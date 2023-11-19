@@ -10,7 +10,7 @@ anthropic = Anthropic(api_key=api_key)
 
 completion = anthropic.completions.create(
     model="claude-2",
-    prompt=f"{HUMAN_PROMPT} Hello! Tell me who Elon Musk is {AI_PROMPT}",
+    prompt=f"{HUMAN_PROMPT} Generate a 200 word travel itinerary that has someone visit Atlanta. They will visit 3 famous landmarks at 3 different times of day.  Also have meals at restaurants before visiting each landmark {AI_PROMPT}",
     max_tokens_to_sample=300,
     stream=True
 )
@@ -21,5 +21,3 @@ for chunk in completion:
         break
     if chunk.completion == "I'm sorry, I don't understand.":
         break
-
-# print("Hello World")
